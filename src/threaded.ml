@@ -16,7 +16,7 @@ let create_threads (n: int) (d: int) (i: int) : ('a * 'b) list =
              in ct n (m-1) ((b,a)::t)
     in ct n n []
     
-let rec join_threads (t: ('a * 'b) list) : 'c list =
+let join_threads (t: ('a * 'b) list) : 'c list =
     let rec jt (t: ('a * 'b) list) (x: 'c list) : 'c list =
         match t with 
             | h'::t' -> let (a,b) = h' 
